@@ -1,0 +1,7 @@
+<div class="card shadow-lg">
+    <img class="card-img-top" [src]="post?.image_url || 'https://via.placeholder.com/253x172?text=Image%20Not%20Found'" alt="Image post" loading="lazy">
+    <div class="card-body">
+        <h5 class="card-title">{{post?.published_at | date: 'd MMMM Y'}}</h5>
+        <p class="card-text">{{post?.title}}</p>
+    </div>
+</div>

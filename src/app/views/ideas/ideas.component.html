@@ -1,0 +1,34 @@
+<app-banner imageUrl="./assets/images/banner.png" title="Ideas" content="Where all our great things begin"></app-banner>
+<div class="container">
+    <div class="pagination-ctn mt-4">
+        <span>Showing 1 - 10 of 100</span>
+        <div class="option">
+            <div class="pagination">
+                <app-dropdown label="Show per page :" [options]="paginationOptions"
+                    (inputModelChange)="onPaginationChange($event)" [selectedOption]="selectedPagination">
+                </app-dropdown>
+            </div>
+            <div class="sort">
+                <app-dropdown label="Sort by :" [options]="sortOptions" (inputModelChange)="onSortChange($event)"
+                    [selectedOption]="selectedSort"></app-dropdown>
+            </div>
+        </div>
+    </div>
+    <div class="post-ctn mt-4">
+        <div class="row" *ngIf="!posts.length">
+            <div class="col-lg-3 mb-3" *ngFor="let post of [0,1,2,3]">
+                <app-card-placeholder></app-card-placeholder>
+            </div>
+        </div>
+        <div class="row" *ngIf="posts.length">
+            <div class="col-lg-3 mb-4" *ngFor="let post of posts">
+                <app-card-post [post]="post"></app-card-post>
+            </div>
+        </div>
+    </div>
+    <div class="pagination">
+        <app-pagination [pageSize]="pagination.pageSize" [collectionSize]="pagination.collectionSize"
+            [page]="pagination.page" [boundaryLinks]="true" [maxSize]="4" (pageChange)="onPageChange($event)">
+        </app-pagination>
+    </div>
+</div>

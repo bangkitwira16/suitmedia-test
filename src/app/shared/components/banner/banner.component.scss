@@ -1,0 +1,16 @@
+div.banner-container {
+  min-height: 400px;
+  width: 100%;
+  background-attachment: fixed !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clip-path: polygon(0px 0px, 100% 0px, 100% 65%, 0px 100%);
+}
+img {
+  object-fit: contain;
+  width: 100%;
+}
